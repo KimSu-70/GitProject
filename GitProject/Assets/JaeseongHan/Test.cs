@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float jumpPower;
 
-    // Update is called once per frame
-    void Update()
+    public Rigidbody rigidbody;
+
+    private void Update()
     {
-        
+        if(transform.position.y <= 0.6)
+        {
+            rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
     }
 }
